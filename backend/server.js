@@ -13,6 +13,15 @@ app.use(cookieParser())
 
 async function main(){
     await prisma.$connect()
+
+    await prisma.user.create({
+        data:{
+            name:"Abu zubaer",
+            "email":"example@gmail.com",
+            "password":"abujubaer"
+            
+        }
+    })
 }
 main().then(async ()=>{
     await prisma.$disconnect()
